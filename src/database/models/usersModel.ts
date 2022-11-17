@@ -32,7 +32,7 @@ const userModel = connection.define('user', {
 
 function createTableUser(user: any) {
   return user.sync({ force: false }).then(() => {
-    console.log('Tabela de usuários criada');
+    console.log('*******User table successfully created*******');
   });
 }
 
