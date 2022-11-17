@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize';
 
-const connection = new Sequelize('guiaperguntas', 'root', '', {
+const connection = new Sequelize('apibaobabrasil', 'root', '', {
   host: 'localhost',
   dialect: 'mysql',
 });

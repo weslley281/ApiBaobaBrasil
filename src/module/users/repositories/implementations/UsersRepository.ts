@@ -22,26 +22,40 @@ class UsersRepository implements IUserRepository {
     admin,
     encryptedpassword,
   }: ICreateUserDTO): Promise<User> {
-    const user: any = await userModel.create({
-      name,
-      phone,
-      email,
-      admin,
-      password: encryptedpassword,
+    // const user: any = await userModel.create({
+    //   name,
+    //   phone,
+    //   email,
+    //   admin,
+    //   password: encryptedpassword,
+    // });
+
+    const [user, created]: any = await userModel.findOrCreate({
+      where: { email: !email },
+      defaults: {
+        name,
+        phone,
+        email,
+        admin,
+        password: encryptedpassword,
+      },
     });
 
     return user;
   }
+
   async findById(user_id: number): Promise<User> {
-    const user: any = await userModel.findOne({ user_id: user_id });
+    const user: any = await userModel.findOne({ where: { user_id: user_id } });
 
     return user;
   }
+
   async findByEmail(email: string): Promise<User> {
-    const user: any = await userModel.findOne({ email: email });
+    const user: any = await userModel.findOne({ where: { email: email } });
 
     return user;
   }
+
   async turnAdmin(user: User): Promise<User> {
     const userAdmin: any = await userModel.update(
       { admin: !user.admin },
@@ -50,6 +64,7 @@ class UsersRepository implements IUserRepository {
 
     return userAdmin;
   }
+
   async list(): Promise<User[]> {
     throw new Error('Method not implemented.');
   }
