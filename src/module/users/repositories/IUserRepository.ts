@@ -9,7 +9,7 @@ interface IUserRepository {
     admin,
     encryptedpassword,
   }: ICreateUserDTO): Promise<User>;
-  findById(user_id: number): Promise<User>;
+  findById(user_id: Number): Promise<User>;
   findByEmail(email: string): Promise<User>;
   turnAdmin(user: User): Promise<User>;
   list(): Promise<User[]>;
