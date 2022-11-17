@@ -7,7 +7,7 @@ const connection = new Sequelize('apibaobabrasil', 'root', '', {
 
 function createConnectionDataBase(connection: Sequelize) {
   return connection.authenticate().then(() => {
-    console.log('Conexão feita com o banco de dados!');
+    console.log('*******Conexão feita com o banco de dados!******* ');
   });
 }
 
