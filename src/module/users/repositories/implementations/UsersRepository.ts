@@ -22,14 +22,6 @@ class UsersRepository implements IUserRepository {
     admin,
     encryptedpassword,
   }: ICreateUserDTO): Promise<User> {
-    // const user: any = await userModel.create({
-    //   name,
-    //   phone,
-    //   email,
-    //   admin,
-    //   password: encryptedpassword,
-    // });
-
     const [user, created]: any = await userModel.findOrCreate({
       where: { email: !email },
       defaults: {
@@ -46,7 +38,7 @@ class UsersRepository implements IUserRepository {
 
   async findById(user_id: number): Promise<User> {
     const user: any = await userModel.findOne({ where: { user_id: user_id } });
-    console.log(user);
+    console.log(`Os dados do usuário é: `, user);
     return user;
   }
 
