@@ -5,6 +5,8 @@ interface IRequest {
   name: string;
   phone: string;
   email: string;
+  birthday: string;
+  status: boolean;
   admin: boolean;
   encryptedpassword: string;
 }
@@ -16,6 +18,8 @@ class CreateUserUseCase {
     name,
     phone,
     email,
+    birthday,
+    status,
     admin,
     encryptedpassword,
   }: IRequest): Promise<User> {
@@ -27,6 +31,8 @@ class CreateUserUseCase {
       name,
       phone,
       email,
+      birthday,
+      status,
       admin,
       encryptedpassword,
     });
