@@ -5,6 +5,11 @@ interface IProductsRepository {
     name,
     descriptiom,
     price,
+    promotionPrice,
+    length,
+    width,
+    height,
+    weight,
     category,
     image,
   }: IProductDTO): Promise<Product>;

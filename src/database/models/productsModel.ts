@@ -20,6 +20,26 @@ const productModel = connection.define('products', {
     type: DataTypes.FLOAT,
     allowNull: false,
   },
+  promotionPrice: {
+    type: DataTypes.FLOAT,
+    allowNull: true,
+  },
+  length: {
+    type: DataTypes.FLOAT,
+    allowNull: false,
+  },
+  width: {
+    type: DataTypes.FLOAT,
+    allowNull: false,
+  },
+  height: {
+    type: DataTypes.FLOAT,
+    allowNull: false,
+  },
+  weight: {
+    type: DataTypes.FLOAT,
+    allowNull: false,
+  },
   category: {
     type: DataTypes.STRING,
     allowNull: false,
