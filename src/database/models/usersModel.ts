@@ -20,6 +20,14 @@ const userModel = connection.define('user', {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  birthday: {
+    type: DataTypes.DATE,
+    allowNull: false,
+  },
+  status: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+  },
   admin: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
