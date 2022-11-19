@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import { connection } from '../db';
 
-const productModel = connection.define('user', {
+const productModel = connection.define('products', {
   product_id: {
     type: DataTypes.INTEGER.UNSIGNED,
     autoIncrement: true,
