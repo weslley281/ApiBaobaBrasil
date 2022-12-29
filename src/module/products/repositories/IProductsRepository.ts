@@ -3,7 +3,7 @@ import { Product } from '../models/Product';
 interface IProductsRepository {
   create({
     name,
-    descriptiom,
+    description,
     price,
     promotionPrice,
     length,

@@ -15,7 +15,7 @@ class ProductsRepository implements IProductsRepository {
 
   async create({
     name,
-    descriptiom,
+    description,
     price,
     promotionPrice,
     length,
@@ -29,7 +29,7 @@ class ProductsRepository implements IProductsRepository {
       where: { name: !name },
       defaults: {
         name,
-        descriptiom,
+        description,
         price,
         promotionPrice,
         length,
@@ -48,7 +48,7 @@ class ProductsRepository implements IProductsRepository {
     const product: any = await productModel.findOne({
       where: { product_id: product_id },
     });
-    console.log(`Os dados do produto é: `, product);
+
     return product;
   }
 
@@ -56,13 +56,13 @@ class ProductsRepository implements IProductsRepository {
     const product: any = await productModel.findOne({
       where: { name: name },
     });
-    console.log(`Os dados do produto é: `, product);
+
     return product;
   }
 
   async list(): Promise<Product[]> {
     const product: any = await productModel.findAll();
-    console.log(`Os produtos são: `, product);
+
     return product;
   }
 }

@@ -1,7 +1,7 @@
 class Product {
   product_id: number | undefined;
   name: string | undefined;
-  descriptiom: string | undefined;
+  description: string | undefined;
   price: number | undefined;
   promotionPrice: number | undefined;
   length: number | undefined;

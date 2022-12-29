@@ -12,7 +12,7 @@ const productModel = connection.define('products', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  descriptiom: {
+  description: {
     type: DataTypes.TEXT,
     allowNull: false,
   },
