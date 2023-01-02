@@ -1,6 +1,7 @@
 import express from 'express';
 import { usersRoutes } from './routes/users.routes';
 import swaggerUi from 'swagger-ui-express';
+import path from 'path';
 
 import swaggerFile from './swagger.json';
 import { createTableUser, userModel } from './database/models/usersModel';
@@ -15,6 +16,7 @@ createTableUser(userModel);
 const app = express();
 
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.use('/users', usersRoutes);
 app.use('/products', productsRoutes);
